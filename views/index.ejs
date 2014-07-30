@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Test blog!</title>
+	<link rel="stylesheet" href="/stylesheets/main.css" type="text/css" />
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<a class="logo"><i class="icon icon-cloud"></i><i class="icon icon-desklamp"></i></a>
+			<form class="search-form" name="search-form">
+				<input type="text" class="search-input" name="search-input" placeholder="Search..."/>
+				<a href="#" class="btn btn-primary"><i class="icon icon-search"></i></a>
+			</form>
+			<ul class="header__menu">
+				<li><a href="#blog">Blog</a></li>
+				<li><a href="#about">About author</a></li>
+			</ul>
+		</div>
+	</header>
+	<section class="content">
+		<div class="container">
+			<aside class="right-col pull-right">
+				<section class="category-list">
+					<h3 class="title">Categories</h3>
+					<ul class="categories">
+						<li><a class="link" href="#">Javascript</a></li>
+						<li><a class="link" href="#">HTML</a></li>
+						<li><a class="link" href="#">CSS</a></li>
+					</ul>
+				</section>
+				<section class="tag-list">
+					<h3 class="title">Tags</h3>
+					<ul class="tags list-inline">
+						<li><a class="btn btn-primary" href="#">tag1</a></li>
+						<li><a class="btn btn-primary" href="#">tag2</a></li>
+						<li><a class="btn btn-primary" href="#">tag3</a></li>
+						<li><a class="btn btn-primary" href="#">tag4</a></li>
+						<li><a class="btn btn-primary" href="#">tag5</a></li>
+					</ul>
+				</section>
+			</aside>
+			<div class="main-col pull-left">
+				<% posts.forEach(function(post) { %>
+					<article class="article">
+						<header class="article__header">
+							<h2 class="article__title"><a class="link" href="/post/<%= post.ID %>"><%= post.name %></a></h2>
+							<time><%= post.date %></time>
+						</header>
+						<p><%= post.text %></p>
+						<footer class="article__footer clearfix">
+							<ul class="tags list-inline">
+								<% post.tags.forEach(function(tag) { %>
+									<li><a class="btn btn-primary" href="#"><%= tag %></a></li>
+								<% }); %>
+							</ul>
+							<ul class="social-links list-inline pull-left">
+								<li><a class="link" href="#"><i class="icon icon-twitter"></i></a></li>
+								<li><a class="link" href="#"><i class="icon icon-facebook"></i></a></li>
+								<li><a class="link" href="#"><i class="icon icon-googleplus"></i></a></li>
+							</ul>
+							<a class="link article__comments-link pull-right" href="#"><%= post.comments.length %> comments</a>
+						</footer>
+					</article>
+				<% }); %>
+			</div>
+		</div>
+	</section>
+	<footer class="footer bg-primary">
+		<div class="container">
+			<h3>© created for EPAM Systems</h3>
+		</div>
+	</footer>
+</body>
+</html>
