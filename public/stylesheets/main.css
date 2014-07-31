@@ -183,8 +183,8 @@ th {
 }
 @font-face {
   font-family: 'WebHostingHub-Glyphs';
-  src: url("/font/webhostinghub-glyphs.eot");
-  src: url("/font/webhostinghub-glyphs.eot?#iefix") format('embedded-opentype'), url("../font/webhostinghub-glyphs.ttf") format('truetype');
+  src: url("../font/webhostinghub-glyphs.eot");
+  src: url("../font/webhostinghub-glyphs.eot?#iefix") format('embedded-opentype'), url("../font/webhostinghub-glyphs.ttf") format('truetype');
   font-weight: normal;
   font-style: normal;
   -moz-font-feature-settings: "calt=0,liga=0";
@@ -6431,6 +6431,7 @@ th {
   clear: both;
 }
 time {
+  display: block;
   font-size: 10px;
   color: #666;
 }
@@ -6614,56 +6615,6 @@ html body ul {
 .content .main-col {
   width: 940px;
   box-sizing: border-box;
-/*.wall-list {
-			.add-newpost {
-				background-color:#f5f5f5;
-				padding:15px;
-				.form-control {
-					resize:none;
-					height:34px;
-				}
-				.links {
-					display:none;
-					margin-top:10px;
-				}
-			}
-			.comments {
-				.comment {
-					position:relative;
-					padding-top:15px;
-					padding-bottom:5px;
-					border-bottom:1px solid #e5e5e5;
-					&:hover {
-						.remove-post {
-							display:block;
-							&:hover {
-								color:$brand-primary;
-							}
-						}
-					}
-					.remove-post {
-						display:none;
-						position:absolute;
-						top:5px;
-						right:5px;
-						color:#ccc;
-					}
-					.img-container {
-						width:10%;
-					}
-					.comment-container {
-						width:90%;
-						.links {
-							li {
-								a {
-									font-size:10px;
-								}
-							}
-						}
-					}
-				}
-			}
-		}*/
 }
 .content .main-col .article {
   background-color: rgba(255,255,255,0.9);
@@ -6691,6 +6642,83 @@ html body ul {
 }
 .content .main-col .article .article__footer .social-links {
   font-size: 18px;
+}
+.content .main-col .article .article__footer .article__comments {
+  margin-top: 20px;
+}
+.content .main-col .article .article__footer .article__comments .comments__item {
+  margin-top: 10px;
+}
+.content .main-col .article .article__footer .article__comments .comments__item + .comments__item:after {
+  content: '';
+  height: 1px;
+  width: 100%;
+  display: block;
+  background-image: -webkit-linear-gradient(left, rgba(41,98,147,0.2), rgba(41,98,147,0.9), rgba(41,98,147,0.2));
+}
+.content .main-col .article .article__footer .article__comments .comments__item .comments__title {
+  margin: 0px;
+  line-height: 22px;
+  font-size: 16px;
+}
+.content .main-col .article .article__footer .article__comments .comments__item .comment__header {
+  margin-bottom: 5px;
+}
+.content .main-col .article .article__footer .article__comments .comments__item .comment__header .comment__title {
+  margin: 0px;
+  line-height: 18px;
+  font-size: 14px;
+}
+.content .main-col .article .article__footer .article__comments .comments__item .comment__header .comment__title span {
+  margin-right: 10px;
+  text-transform: capitalize;
+}
+.content .main-col .article .article__footer .article__comments .comments__item .comment__header .comment__title a {
+  font-size: 10px;
+  font-weight: normal;
+}
+.content .main-col .article .article__footer .article__comments .comments__item p {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.content .main-col .comment-form {
+  background-color: rgba(255,255,255,0.9);
+  padding: 10px 20px 15px;
+  margin-bottom: 20px;
+}
+.content .main-col .comment-form .form-controls {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 0px 10px;
+  box-sizing: border-box;
+}
+.content .main-col .comment-form .form-controls.pull-left {
+  width: 33%;
+}
+.content .main-col .comment-form .form-controls label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.content .main-col .comment-form .form-controls input {
+  height: 30px;
+  width: 100%;
+  line-height: normal;
+  padding: 3px 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+}
+.content .main-col .comment-form .form-controls textarea {
+  resize: none;
+  width: 100%;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
 }
 .content .right-col {
   width: 190px;
